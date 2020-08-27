@@ -20,8 +20,11 @@ class Api::V1::PhrasesController < ApplicationController
     if @phrase.save
       render json: @phrase, status: :created, location: api_v1_phrases_path(@phrase)
     else
-      render json: @phrase.errors.full_messages , status: :unprocessable_entity
-      
+      # render json: @phrase.errors, status: :unprocessable_entity
+
+
+      render json: @phrase.errors  , status: :unprocessable_entity
+
     end
   end
 
