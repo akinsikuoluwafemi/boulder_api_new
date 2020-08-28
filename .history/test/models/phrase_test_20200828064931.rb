@@ -5,7 +5,7 @@ class PhraseTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  
+  test "phrase should be valid"
 
 
 end
