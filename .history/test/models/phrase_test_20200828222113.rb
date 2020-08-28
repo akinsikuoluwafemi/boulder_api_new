@@ -31,8 +31,7 @@ class PhraseTest < ActiveSupport::TestCase
 
   test "should have format of email address" do
     @phrase.email = "example@yahoo.com"
-    assert_match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, @phrase.email)
-
+    assert_match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, @phrase.email)
   end
 
   test "slogan should be present" do 

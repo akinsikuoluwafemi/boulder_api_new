@@ -15,24 +15,18 @@ class PhraseTest < ActiveSupport::TestCase
   end
 
   test "first_name should be present" do
-    @phrase.first_name = ""
+    @phrase.first_name = " "
     assert_not @phrase.valid?
   end
 
   test "last_name should be present" do
-    @phrase.last_name = ""
+    @phrase.last_name = " "
     assert_not @phrase.valid?
   end
 
   test "email should be present" do
-    @phrase.email = ""
+    @phrase.email = " "
     assert_not @phrase.valid?
-  end
-
-  test "should have format of email address" do
-    @phrase.email = "example@yahoo.com"
-    assert_match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, @phrase.email)
-
   end
 
   test "slogan should be present" do 
@@ -40,15 +34,14 @@ class PhraseTest < ActiveSupport::TestCase
     assert_not @phrase.valid?
   end
 
-  test "slogan should be unique" do
-     
+  test "slogan should be unique" do 
     # @phrase.save
     # @phrase2 = Phrase.new(slogan: "Run with a vision of tommorow")
     # assert_not_equal( @phrase2, @phrase )
 
-    # @phrase.save
-    # @phrase2 = Phrase.new(slogan: "Run with your future in mind")
-    # assert_not @phrase2.valid?
+    @phrase.save
+    @phrase2 = Phrase.new(slogan: "Run with your future in mind")
+    assert_not @phrase2.valid?
 
   end
 
