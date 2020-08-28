@@ -35,19 +35,13 @@ class PhraseTest < ActiveSupport::TestCase
   end
 
   test "slogan should be unique" do 
-    # @phrase.save
-    # @phrase2 = Phrase.new(slogan: "Run with a vision of tommorow")
-    # assert_not_equal( @phrase2, @phrase )
-
-    # @phrase.save
-    # @phrase2 = Phrase.new(slogan: "Run with your future in mind")
-    # assert_not @phrase2.valid?
-
+    @phrase.slogan = "Run with a vision of tommorow"
+    @phrase2 = Phrase.new(slogan: "Run with a vision of tommorow")
+    assert_not_equal( @phrase2, @phrase1 )
   end
 
   test "slogan should not be too long" do
-    @phrase.slogan = "a" * 51
-    assert_not @phrase.valid?
+    
   end
   
 

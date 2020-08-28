@@ -36,7 +36,7 @@ class Phrase < ApplicationRecord
                         format: { with: VALID_EMAIL_REGEX }
     validates :slogan, presence: true,
                         uniqueness: true,
-                        length: { maximum: 50 }
+                        # length: { maximum: 50 }
 end
 
 
